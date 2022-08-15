@@ -1,5 +1,7 @@
 //index.js
 
+import ContactForm from "./Contact.js";
+
 // let number = 5;
 // let name = "Asif";
 // // Writing to the document
@@ -35,7 +37,8 @@ function clearMessage() {
 const contactForm = document.getElementById("contactForm");
 contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
-    showMessage("sending your message...");
+    const contact = new ContactForm(contactForm);
+    contact.send();
 });
 
 function sendMessage() {
@@ -52,3 +55,6 @@ for (let i = 0; i < experiences.length; i++) {
         event.target.style  = "";
     });
 }
+
+
+
